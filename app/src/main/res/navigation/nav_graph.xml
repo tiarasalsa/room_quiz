@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/studentListFragment">
+
+    <fragment
+        android:id="@+id/studentListFragment"
+        android:name="unj.cs.student.StudentListFragment"
+        android:label="Students List"
+        tools:layout="@layout/fragment_student_list" >
+        <action
+            android:id="@+id/action_studentListFragment_to_studentFormFragment"
+            app:destination="@id/studentFormFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/studentFormFragment"
+        android:name="unj.cs.student.StudentFormFragment"
+        android:label="Student Form"
+        tools:layout="@layout/fragment_student_form" >
+        <action
+            android:id="@+id/action_studentFormFragment_to_studentListFragment"
+            app:destination="@id/studentListFragment" />
+        <argument
+            android:name="index"
+            app:argType="integer" />
+        <argument
+            android:name="button_text"
+            app:argType="string" />
+    </fragment>
+</navigation>
